@@ -1,20 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-// import './App.css'
 import NavBar from './components/NavBar'
+import Home from './Home';
+import { BrowserRouter, Routes, Route, Link,} from "react-router-dom";
+import BookingForm from './BookingForm';
 
 function App() {
-
   return (
-    <div className="App">
-      <NavBar />
-      <h1 class="text-3xl mb-4 font-bold underline">
-        Hello world!
-      </h1>
-      <p>
-        I'm Revaldo Pratama Putra, back again
-      </p>
-    </div>
+    <BrowserRouter>
+      <NavBar />  
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/booking" element={<BookingForm />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
